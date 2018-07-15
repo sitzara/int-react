@@ -1,0 +1,41 @@
+{
+  "name": "int-react-client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "node_modules/.bin/webpack --watch --config webpack.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "detect-node": "2.0.3",
+    "immutable": "^3.8.2",
+    "prop-types": "15.6.0",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-router-dom": "^4.3.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.0.0-beta.51",
+    "@babel/core": "7.0.0-beta.51",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0-beta.51",
+    "@babel/plugin-transform-runtime": "7.0.0-beta.51",
+    "@babel/polyfill": "7.0.0-beta.51",
+    "@babel/preset-env": "7.0.0-beta.51",
+    "@babel/preset-react": "7.0.0-beta.51",
+    "@babel/preset-stage-0": "7.0.0-beta.51",
+    "@babel/preset-stage-3": "7.0.0-beta.51",
+    "@babel/runtime": "7.0.0-beta.51",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-loader": "7.1.2",
+    "css-loader": "0.28.7",
+    "mini-css-extract-plugin": "0.4.0",
+    "resolve-url-loader": "2.3.0",
+    "style-loader": "0.19.0",
+    "stylus": "0.54.5",
+    "stylus-loader": "3.0.2",
+    "webpack": "4.12.0",
+    "webpack-cli": "3.0.8"
+  }
+}
