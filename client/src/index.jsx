@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import App from './App';
 import TaskOne from './TaskOne';
-// import './styles';
+import TaskTwo from './TaskTwo';
 
 
 ReactDOM.render(
@@ -15,6 +15,7 @@ ReactDOM.render(
         <App>
             <Switch>
                 <Route exact path={'/1'} component={TaskOne} />
+                <Route exact path={'/2'} component={TaskTwo} />
                 <Route path={'/'} component={() => <div>Undefined task number</div>} />
             </Switch>
         </App>
