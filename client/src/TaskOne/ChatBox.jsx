@@ -3,6 +3,14 @@ import ChatMessage from './ChatMessage';
 
 
 export default class ChatBox extends PureComponent {
+    componentDidMount() {
+        this.box.scrollTop = 9999999;
+    }
+
+    componentDidUpdate() {
+        this.box.scrollTop = 9999999;
+    }
+
     renderMessage(message, key) {
         return (
             <ChatMessage key={key} message={message} />
@@ -13,7 +21,9 @@ export default class ChatBox extends PureComponent {
         const { messages } = this.props;
 
         return (
-            <div className={'task-1-chatbox'}>
+            <div
+                className="task-chatbox"
+                ref={box => { this.box = box; }}>
                 {messages.map(this.renderMessage)}
             </div>
         );

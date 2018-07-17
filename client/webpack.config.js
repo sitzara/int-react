@@ -53,6 +53,9 @@ module.exports = {
     },
     resolve: {
         extensions: ['*', '.js', '.jsx', '.styl'],
+        alias: {
+            helpers: path.resolve(__dirname, 'src/helpers/'),
+        },
     },
     watchOptions: {
         aggregateTimeout: 100,

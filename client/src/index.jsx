@@ -8,6 +8,7 @@ import {
 import App from './App';
 import TaskOne from './TaskOne';
 import TaskTwo from './TaskTwo';
+import './styles';
 
 
 ReactDOM.render(

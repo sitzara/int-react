@@ -1,24 +1,26 @@
 import React, { Component } from 'react';
 import faker from 'faker';
 import uuidv4 from 'uuid/v4';
+import fetchMessages from 'helpers/fetchMessages';
 import ChatBox from './ChatBox';
-import './styles';
 
 
 export default class TaskOne extends Component {
     constructor(props) {
         super(props);
 
-        const messages = [...(Array(10))]
-            .map(() => ({ id: uuidv4(), text: faker.lorem.sentence() }));
-
         this.state = {
-            messages,
+            messages: [],
             inputValue: '',
         };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
+    }
+
+    componentDidMount() {
+        const messages = fetchMessages(10);
+        this.setState({ messages });
     }
 
     handleChange(e) {
@@ -28,7 +30,7 @@ export default class TaskOne extends Component {
 
     handleClick() {
         const { inputValue, messages } = this.state;
-        messages.push({ id: uuidv4(), text: inputValue });
+        messages.push({ id: uuidv4(), text: inputValue, userName: 'You' });
 
         this.setState({
             inputValue: '',
@@ -40,10 +42,17 @@ export default class TaskOne extends Component {
         const { inputValue, messages } = this.state;
 
         return (
-            <div className={'task-1'}>
+            <div className={'task'}>
                 <ChatBox messages={messages} />
-                <input value={inputValue} onChange={this.handleChange} />
-                <button onClick={this.handleClick}>send</button>
+                <div className="task-controls">
+                    <input
+                        className="task-input"
+                        ref={input => { this.input = input; }}
+                        value={inputValue}
+                        onChange={this.handleChange}
+                    />
+                    <button className="task-button" onClick={this.handleClick}>send</button>
+                </div>
             </div>
         );
     }
