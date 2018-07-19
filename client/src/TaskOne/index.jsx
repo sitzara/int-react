@@ -19,8 +19,7 @@ export default class TaskOne extends Component {
     }
 
     componentDidMount() {
-        const messages = fetchMessages(10);
-        this.setState({ messages });
+        fetchMessages(10).then(messages => this.setState({ messages }));
     }
 
     handleChange(e) {
@@ -30,7 +29,7 @@ export default class TaskOne extends Component {
 
     handleClick() {
         const { inputValue, messages } = this.state;
-        messages.push({ id: uuidv4(), text: inputValue, userName: 'You' });
+        messages.unshift({ id: uuidv4(), text: inputValue, userName: 'You' });
 
         this.setState({
             inputValue: '',

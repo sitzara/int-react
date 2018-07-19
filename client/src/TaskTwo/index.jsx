@@ -19,8 +19,7 @@ export default class TaskTwo extends Component {
     }
 
     componentDidMount() {
-        const messages = fetchMessages(10000);
-        this.setState({ messages });
+        fetchMessages(10000).then(messages => this.setState({ messages }));
     }
 
     handleChange(e) {
@@ -33,7 +32,7 @@ export default class TaskTwo extends Component {
 
         this.setState({
             inputValue: '',
-            messages: [...messages, { id: uuidv4(), text: inputValue, userName: 'You' }],
+            messages: [{ id: uuidv4(), text: inputValue, userName: 'You' }, ...messages],
         });
     }
 
