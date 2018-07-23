@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import faker from 'faker';
 import uuidv4 from 'uuid/v4';
 import fetchMessages from 'helpers/fetchMessages';
 import ChatBox from './ChatBox';

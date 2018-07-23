@@ -49,6 +49,7 @@ export default class TaskOne extends Component {
                         ref={input => { this.input = input; }}
                         value={inputValue}
                         onChange={this.handleChange}
+                        placeholder="Type your message"
                     />
                     <button className="task-button" onClick={this.handleClick}>send</button>
                 </div>
