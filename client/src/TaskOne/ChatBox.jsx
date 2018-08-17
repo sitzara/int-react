@@ -25,7 +25,7 @@ export default class ChatBox extends PureComponent {
                 className="task-chatbox"
                 ref={box => { this.box = box; }}>
                 {messages.length === 0 && <div>No messages</div>}
-                {messages.reverse().map(this.renderMessage)}
+                {messages.map(this.renderMessage)}
             </div>
         );
     }
