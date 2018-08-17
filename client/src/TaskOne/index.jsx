@@ -29,6 +29,7 @@ export default class TaskOne extends Component {
 
     handleClick() {
         const { inputValue, messages } = this.state;
+        messages.shift();
         messages.push({ id: uuidv4(), text: inputValue, userName: 'You' });
 
         this.setState({

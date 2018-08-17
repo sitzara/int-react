@@ -15,7 +15,7 @@ export default class ChatBox extends PureComponent {
         const { id } = message;
 
         return (
-            <ChatMessage key={id} id={id} message={message} />
+            <ChatMessage key={key} id={id} message={message} />
         );
     }
 

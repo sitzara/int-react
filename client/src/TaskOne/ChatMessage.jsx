@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
 
-export default class ChatMessage extends Component {
+export default class ChatMessage extends PureComponent {
     render() {
         const { message } = this.props;
         const { text, userName } = message;
