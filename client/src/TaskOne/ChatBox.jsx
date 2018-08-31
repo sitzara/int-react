@@ -1,8 +1,8 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import ChatMessage from './ChatMessage';
 
 
-export default class ChatBox extends PureComponent {
+export default class ChatBox extends Component {
     componentDidMount() {
         this.box.scrollTop = 9999999;
     }

@@ -29,9 +29,10 @@ export default class TaskOne extends Component {
 
     handleClick() {
         const { inputValue, messages } = this.state;
+        
         messages.shift();
         messages.push({ id: uuidv4(), text: inputValue, userName: 'You' });
-
+        
         this.setState({
             inputValue: '',
             messages,
@@ -40,7 +41,7 @@ export default class TaskOne extends Component {
 
     render() {
         const { inputValue, messages } = this.state;
-
+        console.log('!!!!!!', this.state);
         return (
             <div className={'task'}>
                 <ChatBox messages={messages} />
